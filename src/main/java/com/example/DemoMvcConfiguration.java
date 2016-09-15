@@ -1,4 +1,4 @@
-package com;
+package com.example;
 
 import com.example.DemoRepositoryRestConfigurerAdapter;
 import com.fasterxml.jackson.databind.ObjectMapper;
