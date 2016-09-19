@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.repository.support.Repositories;
 import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration;
+import org.springframework.hateoas.ResourceProcessor;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
@@ -44,11 +45,11 @@ public class DemoMvcConfiguration extends RepositoryRestMvcConfiguration {
     public ObjectMapper defaultObjectMapper() {
         return new ObjectMapper();
     }
-    //
-    //    @Bean(name = "productResourceProcessor")
-    //    public ResourceProcessor<org.springframework.hateoas.Resource<ProductEntity>> mediaResourceProcessor() {
-    //        return new ProductResourceProcessor();
-    //    }
+
+    @Bean(name = "productResourceProcessor")
+    public ResourceProcessor<org.springframework.hateoas.Resource<ProductEntity>> mediaResourceProcessor() {
+        return new ProductResourceProcessor();
+    }
 
     @PostConstruct
     public void createProduct() {
