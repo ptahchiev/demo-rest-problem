@@ -2,6 +2,7 @@ package com.example;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 /**
@@ -12,6 +13,7 @@ import javax.persistence.Embeddable;
 @Access(AccessType.FIELD)
 public class LobValue {
 
+    @Column(name = "s")
     private String s;
 
     public String getS() {
